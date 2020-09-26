@@ -21,5 +21,6 @@
     <modules>
         <module>helloworld</module>
         <module>single-mvc-study</module>
+        <module>dubbo-mvc-study</module>
     </modules>
 </project>
