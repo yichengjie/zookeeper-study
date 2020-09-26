@@ -20,14 +20,6 @@
 
     <modules>
         <module>helloworld</module>
+        <module>single-mvc-study</module>
     </modules>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>3.4.6</version>
-        </dependency>
-    </dependencies>
-
 </project>
