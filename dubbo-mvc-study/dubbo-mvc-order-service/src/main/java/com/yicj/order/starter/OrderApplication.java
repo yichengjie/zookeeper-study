@@ -8,7 +8,6 @@ public class OrderApplication {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 new String[] {"classpath:/spring/spring-context.xml"});
         context.start();
-        
         System.in.read();
 	}
 
