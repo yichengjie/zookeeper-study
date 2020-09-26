@@ -18,7 +18,7 @@
 	<dubbo:application name="dubbo-mvc-web" />
 
 	<!-- 消费者向zk注册中心注册并且监听 -->
-	<dubbo:registry protocol="zookeeper" address="192.168.1.190:2181"/>
+	<dubbo:registry protocol="zookeeper" address="192.168.221.128:2181"/>
 
 	<!-- 监听的两个服务，通过注册中心去进行查找 -->
 	<dubbo:reference retries="2" interface="com.yicj.item.service.ItemsService"
