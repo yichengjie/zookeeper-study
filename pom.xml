@@ -22,5 +22,6 @@
         <module>helloworld</module>
         <module>single-mvc-study</module>
         <module>dubbo-mvc-study</module>
+        <module>curator-api-study</module>
     </modules>
 </project>

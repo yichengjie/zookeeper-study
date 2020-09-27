@@ -28,15 +28,11 @@ public class CulsterServiceImpl implements CulsterService {
 	@Override
     @Transactional
 	public boolean displayBuy(String itemId) {
-		
 //		System.out.println("linux-pc...");
 		System.out.println("windows-pc...");
-		
 		// 执行订单流程之前使得当前业务获得分布式锁
 		distributedLock.getLock();
-		
 		int buyCounts = 6;
-		
 		// 1. 判断库存
 		int stockCounts = itemsService.getItemCounts(itemId);
 		if (stockCounts < buyCounts) {
@@ -46,10 +42,9 @@ public class CulsterServiceImpl implements CulsterService {
 			distributedLock.releaseLock();
 			return false;
 		}
-		
+
 		// 2. 创建订单
 		boolean isOrderCreated = ordersService.createOrder(itemId);
-		
 		// 模拟处理业务需要3秒
 		try {
 			Thread.sleep(3000);
