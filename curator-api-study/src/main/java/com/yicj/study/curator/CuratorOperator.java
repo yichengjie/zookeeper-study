@@ -11,11 +11,13 @@ import org.apache.curator.framework.recipes.cache.PathChildrenCache.StartMode;
 import org.apache.curator.framework.recipes.cache.PathChildrenCacheEvent;
 import org.apache.curator.framework.recipes.cache.PathChildrenCacheListener;
 import org.apache.curator.retry.RetryNTimes;
+import org.apache.zookeeper.CreateMode;
+import org.apache.zookeeper.ZooDefs;
 
 public class CuratorOperator {
 
 	public CuratorFramework client = null;
-	public static final String zkServerPath = "192.168.221.128:2181";
+	public static final String zkServerPath = "192.168.221.129:2181";
 
 	/**
 	 * 实例化zk客户端
@@ -36,7 +38,7 @@ public class CuratorOperator {
 		 * n：重试的次数
 		 * sleepMsBetweenRetries：每次重试间隔的时间
 		 */
-		RetryPolicy retryPolicy = new RetryNTimes(3, 5000);
+		RetryPolicy retryPolicy = new RetryNTimes(3, 1000);
 		
 		/**
 		 * curator链接zookeeper的策略:RetryOneTime
@@ -83,11 +85,11 @@ public class CuratorOperator {
 		
 		// 创建节点
 		String nodePath = "/super/yicj";
-//		byte[] data = "superme".getBytes();
-//		cto.client.create().creatingParentsIfNeeded()
-//			.withMode(CreateMode.PERSISTENT)
-//			.withACL(Ids.OPEN_ACL_UNSAFE)
-//			.forPath(nodePath, data);
+		byte[] data = "superme".getBytes();
+		cto.client.create().creatingParentsIfNeeded()
+			.withMode(CreateMode.PERSISTENT)
+			.withACL(ZooDefs.Ids.OPEN_ACL_UNSAFE)
+			.forPath(nodePath, data);
 		
 		// 更新节点数据
 //		byte[] newData = "batman".getBytes();
