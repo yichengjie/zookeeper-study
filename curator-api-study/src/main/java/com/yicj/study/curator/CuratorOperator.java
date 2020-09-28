@@ -17,7 +17,7 @@ import org.apache.zookeeper.ZooDefs;
 public class CuratorOperator {
 
 	public CuratorFramework client = null;
-	public static final String zkServerPath = "192.168.221.129:2181";
+	public static final String zkServerPath = "192.168.221.128:2181";
 
 	/**
 	 * 实例化zk客户端
